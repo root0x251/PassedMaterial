@@ -26,13 +26,10 @@
                      @"Nevrity", @"Diskinezii zhelchevyvodyashchikh putey", @"Kholetsistit", @"Migren",
                      @"Virusnye porazheniya nervnoy sistemy", @"Kholetsistit", @"Nevrity"];
     
-//    NSMutableArray *sickPatientObjekt = [NSMutableArray new];
-//    NSMutableArray *sickPatientKey = [NSMutableArray new];
-    NSMutableDictionary *sickPatient = [NSMutableDictionary new];
+    NSMutableDictionary *sickPatientObjekt = [NSMutableDictionary new];     // реплизовать через один NSMutableDictionary
     
     for (int i = 0; i < 10; i++) {
         Pacient *patient = [Pacient new];
-        
         NSInteger number = arc4random_uniform(8.f) + 35.f;
         CGFloat random = number;
         
@@ -41,13 +38,11 @@
         
         patient.temperature = random;        // ?????????????/
         
-        [sickPatient setObject:patient forKey:name];
-//        [sickPatientKey addObject:[NSString stringWithFormat:@"%@ - %@", [sickPatientObjekt [i] name], [sickPatientObjekt [i] ill]]];
+        [sickPatientObjekt setObject:patient forKey:name];
     }
-//    NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:sickPatientObjekt forKeys:sickPatientKey];
     
-    for (NSString *key in [sickPatient allKeys]) {
-        Pacient *obj = [sickPatient objectForKey:key];
+    for (NSString *key in [sickPatientObjekt allKeys]) {
+        Pacient *obj = [sickPatientObjekt objectForKey:key];
         NSLog(@"Name %@, Ill - %@, t = %.f", obj.name, obj.ill, obj.temperature);
     }
 
