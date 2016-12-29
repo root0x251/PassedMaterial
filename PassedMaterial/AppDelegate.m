@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Pacient.h"
+#import "Doctor.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,42 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    NSArray *name = @[@"Innokentiy", @"Irakliy", @"Isaak", @"Svyatoslav", @"Sevastyan",
+                     @"Semen", @"Serafim", @"Sharl", @"Sherlok", @"Erik"];
+    
+    NSArray *ill = @[@"Migren", @"Cherepno-mozgovaya travma", @"Virusnye porazheniya nervnoy sistemy",
+                     @"Nevrity", @"Diskinezii zhelchevyvodyashchikh putey", @"Kholetsistit", @"Migren",
+                     @"Virusnye porazheniya nervnoy sistemy", @"Kholetsistit", @"Nevrity"];
+    
+//    NSMutableArray *sickPatientObjekt = [NSMutableArray new];
+//    NSMutableArray *sickPatientKey = [NSMutableArray new];
+    NSMutableDictionary *sickPatient = [NSMutableDictionary new];
+    
+    for (int i = 0; i < 10; i++) {
+        Pacient *patient = [Pacient new];
+        
+        NSInteger number = arc4random_uniform(8.f) + 35.f;
+        CGFloat random = number;
+        
+        patient.name = [NSString stringWithFormat: @"%@", [name objectAtIndex:i]];
+        patient.ill = [NSString stringWithFormat: @"%@", [ill objectAtIndex:i]];
+        
+        patient.temperature = random;        // ?????????????/
+        
+        [sickPatient setObject:patient forKey:name];
+//        [sickPatientKey addObject:[NSString stringWithFormat:@"%@ - %@", [sickPatientObjekt [i] name], [sickPatientObjekt [i] ill]]];
+    }
+//    NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:sickPatientObjekt forKeys:sickPatientKey];
+    
+    for (NSString *key in [sickPatient allKeys]) {
+        Pacient *obj = [sickPatient objectForKey:key];
+        NSLog(@"Name %@, Ill - %@, t = %.f", obj.name, obj.ill, obj.temperature);
+    }
+
+    
+    
+    
     return YES;
 }
 

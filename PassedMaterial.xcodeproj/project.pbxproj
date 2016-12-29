@@ -15,6 +15,8 @@
 		F9F6616F1E13D96F009C2829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F6616D1E13D96F009C2829 /* LaunchScreen.storyboard */; };
 		F9F6617A1E13D96F009C2829 /* PassedMaterialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F661791E13D96F009C2829 /* PassedMaterialTests.m */; };
 		F9F661851E13D96F009C2829 /* PassedMaterialUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F661841E13D96F009C2829 /* PassedMaterialUITests.m */; };
+		F9F661941E13D97E009C2829 /* Pacient.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F661931E13D97E009C2829 /* Pacient.m */; };
+		F9F661971E13DA93009C2829 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F661961E13DA93009C2829 /* Doctor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		F9F661801E13D96F009C2829 /* PassedMaterialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PassedMaterialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F661841E13D96F009C2829 /* PassedMaterialUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassedMaterialUITests.m; sourceTree = "<group>"; };
 		F9F661861E13D96F009C2829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9F661921E13D97E009C2829 /* Pacient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pacient.h; path = ../Pacient.h; sourceTree = "<group>"; };
+		F9F661931E13D97E009C2829 /* Pacient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pacient.m; path = ../Pacient.m; sourceTree = "<group>"; };
+		F9F661951E13DA93009C2829 /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
+		F9F661961E13DA93009C2829 /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,10 @@
 			children = (
 				F9F661621E13D96F009C2829 /* AppDelegate.h */,
 				F9F661631E13D96F009C2829 /* AppDelegate.m */,
+				F9F661921E13D97E009C2829 /* Pacient.h */,
+				F9F661931E13D97E009C2829 /* Pacient.m */,
+				F9F661951E13DA93009C2829 /* Doctor.h */,
+				F9F661961E13DA93009C2829 /* Doctor.m */,
 				F9F661651E13D96F009C2829 /* ViewController.h */,
 				F9F661661E13D96F009C2829 /* ViewController.m */,
 				F9F661681E13D96F009C2829 /* Main.storyboard */,
@@ -273,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9F661941E13D97E009C2829 /* Pacient.m in Sources */,
 				F9F661671E13D96F009C2829 /* ViewController.m in Sources */,
 				F9F661641E13D96F009C2829 /* AppDelegate.m in Sources */,
 				F9F661611E13D96F009C2829 /* main.m in Sources */,
+				F9F661971E13DA93009C2829 /* Doctor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
