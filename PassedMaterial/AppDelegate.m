@@ -22,28 +22,34 @@
     NSArray *name = @[@"Innokentiy", @"Irakliy", @"Isaak", @"Svyatoslav", @"Sevastyan",
                      @"Semen", @"Serafim", @"Sharl", @"Sherlok", @"Erik"];
     
-    NSArray *ill = @[@"Migren", @"Cherepno-mozgovaya travma", @"Virusnye porazheniya nervnoy sistemy",
-                     @"Nevrity", @"Diskinezii zhelchevyvodyashchikh putey", @"Kholetsistit", @"Migren",
-                     @"Virusnye porazheniya nervnoy sistemy", @"Kholetsistit", @"Nevrity"];
+    NSArray *ill = @[@"Migren", @"Cherepno-mozgovaya travma", @"Nevrity"];
     
-    NSMutableDictionary *sickPatientObjekt = [NSMutableDictionary new];     // реплизовать через один NSMutableDictionary
-    
+    NSMutableDictionary *sickPatientObject = [NSMutableDictionary new];
     for (int i = 0; i < 10; i++) {
         Pacient *patient = [Pacient new];
-        NSInteger number = arc4random_uniform(8.f) + 35.f;
+        NSInteger number = arc4random_uniform(8.1f) + 35.9f;
         CGFloat random = number;
+        NSInteger position = arc4random() % ([ill count]);
         
         patient.name = [NSString stringWithFormat: @"%@", [name objectAtIndex:i]];
-        patient.ill = [NSString stringWithFormat: @"%@", [ill objectAtIndex:i]];
+//        patient.ill = [NSString stringWithFormat: @"%@", [ill objectAtIndex:i]];
+        patient.ill = [NSString stringWithFormat:@"%@", [ill objectAtIndex:position]];
         
-        patient.temperature = random;        // ?????????????/
+        patient.temperature = random;
         
-        [sickPatientObjekt setObject:patient forKey:name];
+        [sickPatientObject setObject:patient forKey:[name objectAtIndex:i]];
     }
-    
-    for (NSString *key in [sickPatientObjekt allKeys]) {
-        Pacient *obj = [sickPatientObjekt objectForKey:key];
-        NSLog(@"Name %@, Ill - %@, t = %.f", obj.name, obj.ill, obj.temperature);
+    Doctor *doctor = [Doctor new];
+    for (NSString *key in [sickPatientObject allKeys]) {
+        Pacient *obj = [sickPatientObject objectForKey:key];
+        obj.delegate = doctor;
+
+        if ([obj isOk]) {
+            NSLog(@"Evereything is fine");
+        }else{
+            [obj patientDetailedInspection];
+        }
+        
     }
 
     
